@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html land="pt-br">
+ <head> 
+     <meta charset="UTF-8"/>
+     <title> Tudo Sobre Google Glass </title>
+     <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>   
+     <link rel="stylesheet" href="_css/form.css"/>
+</head>
+ <script language="javascript" src="_javascript/funcoes.js/"> 
+</script>
+    <script> 
+      function calc_total(){
+          var qtd=parseInt(document.getElementById('cQtd').value);
+          tot = qtd*1500;
+          document.getElementById('cTot').value = tot;
+      }
+    </script>
+     <body>
+           
+    <div id="interface">
+
+        
+<header id="cabecalho">
+    <hgroup>
+    <h1> Google Glass</h1>
+    <h2> A Revolução do Google está Chegando </h2>
+     </hgroup>
+              
+    <img id="icone" src="D:/projeto-glass-html5/_imagens/contato.png"/> 
+    
+    <nav id="menu">
+    <h1> Menu Principal </h1>
+    <ul type="disc"> 
+        
+    <li onmouseover="mudaFoto('D:/projeto-glass-html5/_imagens/home.png')" onmouseout="mudaFoto('D:/projeto-glass-html5/_imagens/glass-oculos-preto-peq.png')"> <a href="index.html">Home </a> </li>
+        
+     <li onmouseover="mudaFoto('D:/projeto-glass-html5/_imagens/especificacoes.png')" onmouseout="mudaFoto('D:/projeto-glass-html5/_imagens/glass-oculos-preto-peq.png')"> <a href="specs.html"> Especificações </a> </li>
+        
+      <li onmouseover="mudaFoto('D:/projeto-glass-html5/_imagens/fotos.png')" onmouseout="mudaFoto('D:/projeto-glass-html5/_imagens/glass-oculos-preto-peq.png')"> <a href="fotos.html"> Fotos </a> </li> 
+        
+      <li onmouseover="mudaFoto('D:/projeto-glass-html5/_imagens/multimidia.png')" onmouseout="mudaFoto('D:/projeto-glass-html5/_imagens/glass-oculos-preto-peq.png')"> <a href="multimidia.html">Multimídia </a> </li> 
+        
+      <li onmouseover="mudaFoto('D:/projeto-glass-html5/_imagens/contato.png')" onmouseout="mudaFoto('D:/projeto-glass-html5/_imagens/glass-oculos-preto-peq.png')"> <a href="fale-conosco.html"> Fale conosco </a> </li>
+    </ul>
+</nav>  
+ </header>
+        <article id="noticia-principal"> 
+   <hgroup> 
+<header id="cabecalho-artigo"> 
+   <h3> Fale Conosco > Contato </h3>
+   <h1>Formulário de Contato</h1>
+   <h2> por Jullia Barros </h2>
+   <h3 class="direita"> Atualizado em 23/Abril/2013 </h3>
+    
+    </header>
+  </hgroup> 
+        
+<form method="post" id="fContato" action="mailto:testedeprojetos.com" oninput="calc_total();">
+    
+    <!--action é para onde os dados irão ser enviados-->
+    
+  <fieldset id="usuario"> <legend> Identificação do Usuário </legend>
+    <p> <label for="cNome"> Nome: </label>  
+        <input type="text" name="tNome" id="cNome" size="20" maxlength="40" placeholder="Digite seu nome completo"> </p>
+        
+       
+   <p> <label for="cSenha">  Senha:  </label>  
+       <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos">  </p>
+      
+   <p> <label for="cEmail"> E-mail: </label>
+       <input type="email" name=tEmail id=cEmail size="20" maxlength="37" placeholder="Digite seu melhor e-mail"></p> 
+    
+    <!--size é o tamanho máximo. E o maxlenght é a quantidade de caracteres dentro da caixa de texto-->
+    
+    <!--O nome no type é o da caixa e texto; Enquanto o id é o campo-->
+
+      <fieldset id="sexo"> <legend> Sexo: </legend>
+          <input type="radio" name="tSexo" id="cMas"> <label for="cMas"> Masculino </label> </input><br>
+    
+          <input type="radio" name="tSexo" id="cFem" checked> <label for="cFem"> Feminino </label> </input>
+    </fieldset>
+          <p> <label for="cNasc"> Data de Nascimento: </label>
+              <input type="date" nome="tNasc" id="cNasc"> </p>
+</fieldset>
+         
+         <!--Usei o label for para quando clicar na palavra também selecionar o campo Sexo-->
+     
+
+        
+<fieldset id="endereco"> <legend>  Endereço do Usuário</legend>
+    <p> <label for="cRua"> Logradouro:</label>
+        <input type="text" nome="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua av.amaral 23" ></p> </input>
+    <p> <label for="cNum"> Número: </label>
+        <input type="number" name="tNum" id="cNum" min=0 max=99999></p> 
+    <p> <label for="cEst"> Estado: </label>
+    <select name="tEst" id="cEst">
+        
+        <optgroup label="Região Sudeste"> 
+            <option value="RJ"> Rio de Janeiro </option>
+            <option value="SP" selected> São Paulo </option>
+            <option value="MG"> Minas Gerais </option>
+         </optgroup> 
+        
+        <optgroup label="Região Sul">
+          <option value="PR"> Paraná </option>
+          <option value="SC"> Santa Catarina </option>
+          <option value="RS"> Rio Grande do Sul </option>
+     </optgroup>
+        
+    </select> </p>
+    <p> <label for="cCid">Cidade: </label>
+          <input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Sua Cidade" list="cidades"/></p> 
+            <datalist id="cidades">
+            <option value="Rio de Janeiro"> </option>
+            <option> Nova Iguaçu </option>
+            <option> Niterói </option>
+            <option> Copacabana </option>
+            <option> Duque de Caxias </option>
+            <option> Angra dos Reis </option>
+            <option> Cabo Frio </option>
+            <option> Armação dos Búzios </option>
+        
+        </datalist>
+  </fieldset>
+         
+         <!--Poderia ter inscrito Rio de janeiro e colocar um <option value="RJ" </option>  -->
+     
+ <fieldset id="mensagem"> <legend>  Mensagem do Usuário </legend>
+   <p> <label for="cUrg">Grau de Urgência: </label>
+     Mín <input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"> Máx </p> 
+   <p> <label for="cMsg"> Mensagem:</label>
+     <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixa aqui sua mensagem"> </textarea></p> 
+  </fieldset>
+
+<fieldset id="pedido"> <legend>  Quero um Google Glass</legend>
+ <p> <input type="checkbox" name="tPed" id="cPed" checked>
+     <label for="cPed"> Gostaria de adquirir um Google Glass quando disponível </label> </p>
+   <p> <label for="cCor"> Cor:</label>
+    <input type="color" name="tCor" id="CCor" value="#000FFF"> </p> 
+    
+   <p> <label for="cQtd"> Quantidade: </label>
+    <input type="number" name="tQtd" id="cQtd" min="0" max="5"> </p> 
+   <p> <label for="cTot"> Preço Total: R$</label>
+    <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly> </p> 
+ </fieldset>
+         
+         <!--Com readonly vc não consegue digitar-->
+
+  <input id="cEnviar" type="image" name="tEnviar" id="cEnviar" src="_imagens/botao-enviar.png">
+        
+     
+</form>
+
+<footer id="rodape"> 
+<p> Copyright &copy; 2013 - by Jullia Barros <br>
+<a href= "https://github.com/jullia-Barros" target="_blank"> Github </a> </p>
+</footer>
+  
+        </div>  
+   </body>
+</html>
